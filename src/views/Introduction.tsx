@@ -1,5 +1,7 @@
 "use client";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+import { FlipWords } from "../components/ui/flip-words";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 export function Introduction() {
   const images = [
@@ -37,30 +39,40 @@ export function Introduction() {
   ];
   return (
     <div className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden">
-      {/* <h2 className="relative z-20 mx-auto max-w-4xl text-center text-2xl font-bold text-balance text-white md:text-4xl lg:text-6xl">
-        This is your life and it&apos;s ending one{" "}
-        <span className="relative z-20 inline-block rounded-xl bg-blue-500/40 px-4 py-1 text-white underline decoration-sky-500 decoration-[6px] underline-offset-[16px] backdrop-blur-sm">
-          moment
-        </span>{" "}
-        at a time.
-      </h2>
-      <p className="relative z-20 mx-auto max-w-2xl py-8 text-center text-sm text-neutral-200 md:text-base">
-        You are not your job, you&apos;re not how much money you have in the
-        bank. You are not the car you drive. You&apos;re not the contents of
-        your wallet.
-      </p>
-
-      <div className="relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4">
-        <button className="rounded-md bg-sky-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-sky-700 focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-          Join the club
-        </button>
-        <button className="rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
-          Read more
-        </button>
-      </div> */}
-
+      <div className="relative z-20 w-full mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 px-4 gap-10 mt-10 sm:mt-0">
+        <div className="w-full max-w-[50vw] bg-white aspect-square rounded-full mx-auto"></div>
+        <div className="w-full h-full sm:col-span-2 flex flex-col items-start justify-around gap-4">
+          <h1 className="flex flex-col sm:flex-row text-2xl sm:text-3xl text-white sm:gap-2 text-shadow-lg sm:items-center">
+            <span className="align-middle">Hello, I'm</span>
+            <div className="font-bold text-[#FCC959] text-4xl align-middle">
+              SAI ZACK
+              <img
+                src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif"
+                alt="gif"
+                className="w-12 h-12 rounded-full inline-block ms-3"
+              />
+            </div>
+          </h1>
+          <FlipWordTitle />
+          <p className="text-gray-400 dark:text-zinc-400 text-lg sm:text-2xl max-w-3xl mx-auto mb-10">
+            build innovative{" "}
+            <LinkPreview url="https://framer.com/motion">
+              projects
+            </LinkPreview>{" "}
+            that showcase my{" "}
+            <LinkPreview url="https://framer.com/motion">
+              skills
+            </LinkPreview>{" "}
+            in both development and design, with hands-on{" "}
+            <LinkPreview url="https://framer.com/motion">
+              experiences
+            </LinkPreview>{" "}
+            in React, Laravel, and Figma.
+          </p>
+        </div>
+      </div>
       {/* overlay */}
-      <div className="absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40" />
+      <div className="absolute inset-0 z-10 h-full w-full bg-gray-950/75 backdrop-blur-[2px] dark:bg-zinc-900/50" />
       <ThreeDMarquee
         className="pointer-events-none absolute inset-0 h-full w-full"
         images={images}
@@ -68,3 +80,14 @@ export function Introduction() {
     </div>
   );
 }
+
+const FlipWordTitle = () => {
+  const words = ["Designer", "Developer", "Engineer"];
+  return (
+    <div className=" text-2xl sm:text-4xl font-semibold text-white text-shadow-lg">
+      &lt; Software
+      <FlipWords words={words} />
+      /&gt;
+    </div>
+  );
+};

@@ -17,15 +17,15 @@ export function Header() {
   const navItems = [
     {
       name: "Skills",
-      link: "#pricing",
+      link: "#skills",
     },
     {
-      name: "Proj",
-      link: "#contact",
+      name: "Projects",
+      link: "#projects",
     },
     {
       name: "Experience",
-      link: "#contact",
+      link: "#experience",
     },
     {
       name: "Contact",
