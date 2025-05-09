@@ -11,6 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import ThemeToggle from '../components/ThemeToggle';
 
 export function Header() {
   const navItems = [
@@ -38,8 +39,8 @@ export function Header() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary">Login</NavbarButton>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            <NavbarButton variant="primary"><ThemeToggle /></NavbarButton>
+            
           </div>
         </NavBody>
 
