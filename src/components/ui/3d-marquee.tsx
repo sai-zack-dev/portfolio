@@ -18,7 +18,7 @@ export const ThreeDMarquee = ({
   return (
     <div
       className={cn(
-        "mx-auto block h-[600px] md:overflow-hidden max-sm:h-100",
+        "mx-auto block h-[600px] max-sm:h-100",
         className,
       )}
     >

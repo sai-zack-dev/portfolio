@@ -23,7 +23,7 @@ export function ProjectCard() {
 
           <motion.div className="p-4 relative z-20">
             <h2 className="text-white text-2xl text-left font-bold">
-              Apple Vision Pro
+              Full Stack Project
             </h2>
             <p className="text-gray-400 text-sm mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

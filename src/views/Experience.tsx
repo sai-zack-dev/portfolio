@@ -3,6 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { cn } from "@/lib/utils";
 
 export function Experience() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -28,11 +29,12 @@ export function Experience() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-  useOutsideClick(ref as React.RefObject<HTMLDivElement>, () => setActive(null));
+  useOutsideClick(ref as React.RefObject<HTMLDivElement>, () =>
+    setActive(null)
+  );
 
   return (
     <>
-    
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -102,7 +104,7 @@ export function Experience() {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-transparent text-transparent display-none"
                   >
                     {active.ctaText}
                   </motion.a>
@@ -125,8 +127,21 @@ export function Experience() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-5xl mx-auto w-full gap-4 px-10 mb-20">
-        <h1 className="text-black dark:text-white text-2xl mb-10">Experiences</h1>
+      <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+      <div
+        className={cn(
+          "absolute inset-0",
+          "[background-size:20px_20px]",
+          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
+        )}
+      />
+      {/* Radial gradient for the container to give a faded look */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+      <ul className="max-w-5xl mx-auto w-full gap-4 px-10 mb-20 z-30">
+        <h1 className="text-black dark:text-white text-2xl mb-10">
+          Experiences
+        </h1>
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -168,6 +183,8 @@ export function Experience() {
           </motion.div>
         ))}
       </ul>
+    </div>
+      
     </>
   );
 }
@@ -207,10 +224,10 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
+    description: "Freelance",
+    title: "Graphic Designer",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Play",
+    ctaText: "View More",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -230,10 +247,10 @@ const cards = [
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
+    description: "Intern",
+    title: "QA Tester",
     src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Play",
+    ctaText: "View More",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -253,10 +270,10 @@ const cards = [
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
+    description: "Intern",
+    title: "ERP Solution",
     src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Play",
+    ctaText: "View More",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -275,10 +292,10 @@ const cards = [
     },
   },
   {
-    description: "Led Zeppelin",
-    title: "Stairway To Heaven",
+    description: "Full Time",
+    title: "Full Stack Developer",
     src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "Play",
+    ctaText: "View More",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
