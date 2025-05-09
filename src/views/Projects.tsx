@@ -1,63 +1,45 @@
 "use client";
 
+import { ProjectCard } from "@/components/ProjectCard";
 import { Tabs } from "../components/ui/tabs";
 
 export function Projects() {
   const tabs = [
     {
-      title: "Product",
-      value: "product",
+      title: "Web App",
+      value: "web-app",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Product Tab</p>
-          <DummyContent />
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+          <ProjectCard />
+          <ProjectCard />
         </div>
       ),
     },
     {
-      title: "Services",
-      value: "services",
+      title: "Mobile App",
+      value: "mobile-app",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Services tab</p>
-          <DummyContent />
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+          <ProjectCard />
+          <ProjectCard />
         </div>
       ),
     },
     {
-      title: "Playground",
-      value: "playground",
+      title: "Design",
+      value: "design",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Playground tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Content",
-      value: "content",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Content tab</p>
-          <DummyContent />
-        </div>
-      ),
-    },
-    {
-      title: "Random",
-      value: "random",
-      content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
-          <p>Random tab</p>
-          <DummyContent />
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+          <ProjectCard />
+          <ProjectCard />
         </div>
       ),
     },
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-40">
+    <div className="h-[80rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl px-10 mx-auto w-full  items-start justify-start my-40">
+      <h1 className="text-black dark:text-white text-2xl mb-10">Featured Projects</h1>
       <Tabs tabs={tabs} />
     </div>
   );

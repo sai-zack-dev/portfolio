@@ -32,6 +32,7 @@ export function Experience() {
 
   return (
     <>
+    
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -124,7 +125,8 @@ export function Experience() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className="max-w-2xl mx-auto w-full gap-4">
+      <ul className="max-w-5xl mx-auto w-full gap-4 px-10 mb-20">
+        <h1 className="text-black dark:text-white text-2xl mb-10">Experiences</h1>
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -289,28 +291,6 @@ const cards = [
           With a career spanning over a decade, Led Zeppelin has released
           numerous hit albums and singles that have garnered them a massive fan
           following both in the United Kingdom and abroad.
-        </p>
-      );
-    },
-  },
-  {
-    description: "Mustafa Zahid",
-    title: "Toh Phir Aao",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          &quot;Aawarapan&quot;, a Bollywood movie starring Emraan Hashmi, is
-          renowned for its intense storyline and powerful performances. Directed
-          by Mohit Suri, the film has become a significant work in the Indian
-          film industry. <br /> <br /> The movie explores themes of love,
-          redemption, and sacrifice, capturing the essence of human emotions and
-          relationships. With a gripping narrative and memorable music,
-          &quot;Aawarapan&quot; has garnered a massive fan following both in
-          India and abroad, solidifying Emraan Hashmi&apos;s status as a
-          versatile actor.
         </p>
       );
     },
