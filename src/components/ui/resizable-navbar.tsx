@@ -69,7 +69,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <motion.div
       ref={ref}
       // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
-      className={cn("sticky inset-x-0 top-10 z-40 w-full", className)}
+      className={cn("sticky inset-x-0 top-0 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -103,7 +103,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className,
       )}
@@ -236,13 +236,14 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
-      <img
+      {/* <img
         src="https://assets.aceternity.com/logo-dark.png"
         alt="logo"
         width={30}
         height={30}
-      />
-      <span className="font-medium text-black dark:text-white">Startup</span>
+      /> */}
+      <span className="text-2xl">ℤ</span>
+      <span className="font-medium text-black dark:text-white"> Sai Zack</span>
     </a>
   );
 };

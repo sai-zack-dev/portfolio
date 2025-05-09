@@ -1,7 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
-import {
-  NavbarButton
-} from "@/components/ui/resizable-navbar";
+import { NavbarButton } from "@/components/ui/resizable-navbar";
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
@@ -12,9 +10,11 @@ const ThemeToggle = () => {
         console.log("Toggle button clicked");
         toggleTheme();
       }}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-700 dark:text-white"
+      className={`p-2 rounded bg-transparent ${
+        theme === "dark" ? "text-4xl" : "text-2xl"
+      } dark:text-white aspect-square shadow-none`}
     >
-      Switch to {theme === "dark" ? "Light" : "Dark"} Mode
+      {theme === "dark" ? "☼" : "☾"}
     </NavbarButton>
   );
 };

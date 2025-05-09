@@ -6,20 +6,20 @@ import { Tabs } from "../components/ui/tabs";
 export function Projects() {
   const tabs = [
     {
-      title: "Web App",
-      value: "web-app",
+      title: "Web",
+      value: "web",
       content: (
-        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-black grid grid-cols-1 md:grid-cols-2 gap-10">
           <ProjectCard />
           <ProjectCard />
         </div>
       ),
     },
     {
-      title: "Mobile App",
-      value: "mobile-app",
+      title: "Mobile",
+      value: "mobile",
       content: (
-        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-black  grid grid-cols-1 md:grid-cols-2 gap-10">
           <ProjectCard />
           <ProjectCard />
         </div>
@@ -29,7 +29,7 @@ export function Projects() {
       title: "Design",
       value: "design",
       content: (
-        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-900 to-black grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="w-full relative h-fit rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-gray-100 to-white dark:from-gray-900 dark:to-black  grid grid-cols-1 md:grid-cols-2 gap-10">
           <ProjectCard />
           <ProjectCard />
         </div>
