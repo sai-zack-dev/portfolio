@@ -3,23 +3,25 @@
 import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
+import { Element } from "react-scroll";
 
 export function Skills() {
   return (
-    <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
-      <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:40px_40px]",
-          "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
-          "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]",
-        )}
-      />
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-      <Grid />
-    </div>
-    
+    <Element name="skills" className="h-dvh my-[150px] sm:mb-0">
+      <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+        <div
+          className={cn(
+            "absolute inset-0",
+            "[background-size:40px_40px]",
+            "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
+            "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
+          )}
+        />
+        {/* Radial gradient for the container to give a faded look */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+        <Grid />
+      </div>
+    </Element>
   );
 }
 
@@ -36,7 +38,9 @@ const Grid = () => {
       <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-2 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem]">
         <GridItem
           area="md:[grid-area:1/1/3/2]"
-          icon={<Settings className="h-4 w-4 text-black dark:text-neutral-400" />}
+          icon={
+            <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
+          }
           title="Tech Stack"
           description="Laravel, PHP, React, React Native, JavaScript"
         />
@@ -52,14 +56,16 @@ const Grid = () => {
 
         <GridItem
           area="md:[grid-area:2/2/3/3]"
-          icon={<Box className="h-full w-full text-black dark:text-neutral-400" />}
+          icon={
+            <Box className="h-full w-full text-black dark:text-neutral-400" />
+          }
           title="Soft Skills"
           description="Strong Collaboration & Teamwork, Time Management, Critical Thinking & Problem-Solving, Willingness to Learn new tech"
         />
       </ul>
     </div>
-  )
-}
+  );
+};
 
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (

@@ -67,7 +67,7 @@ export function Introduction() {
             <LinkPreview url="https://framer.com/motion">
               experiences
             </LinkPreview>{" "}
-            in React, Laravel, and Figma.
+            in Laravel, React, React Native and Figma.
           </p>
         </div>
       </div>

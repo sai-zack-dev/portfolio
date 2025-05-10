@@ -1,12 +1,17 @@
 "use client";
-import { useState } from "react";
-import { Lens } from "./ui/lens";
+// import { useState } from "react";
+// import { Lens } from "./ui/lens";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export function ProjectCard() {
-  const [hovering, setHovering] = useState(false);
+interface ProjectCardProps {
+  thumbnail: string;
+  title: string;
+  description: string;
+}
 
+export function ProjectCard({ thumbnail, title, description }: ProjectCardProps) {
+  // const [hovering, setHovering] = useState(false);
   return (
     // <Lens>
     //   <div className="w-full relative rounded-3xl overflow-hidden max-w-md mx-auto bg-gradient-to-r from-[#1D2235] to-[#121318] ">
@@ -34,17 +39,17 @@ export function ProjectCard() {
     // </Lens>
     <div className="relative z-10 cursor-pointer w-full">
           <img
-            src="https://images.unsplash.com/photo-1713869820987-519844949a8a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={thumbnail}
             alt="image"
             className="rounded-2xl"
           />
 
           <motion.div className="p-4 relative z-20">
             <h2 className="text-black dark:text-white text-2xl text-left font-bold">
-              Full Stack Project
+             {title}
             </h2>
             <p className="text-gray-400 text-sm mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              {description}
             </p>
           </motion.div>
         </div>

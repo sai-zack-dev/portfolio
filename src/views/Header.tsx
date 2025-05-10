@@ -5,31 +5,39 @@ import {
   NavItems,
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import ThemeToggle from "../components/ThemeToggle";
+import { Link } from "react-scroll";
 
 export function Header() {
   const navItems = [
     {
       name: "Skills",
-      link: "#skills",
+      link: "skills",
+      offset: "0",
+      mobile: "-50",
     },
     {
       name: "Projects",
-      link: "#projects",
+      link: "projects",
+      offset: "-120",
+      mobile: "-100",
     },
     {
       name: "Experience",
-      link: "#experience",
+      link: "experience",
+      offset: "0",
+      mobile: "-30",
     },
     {
       name: "Contact",
-      link: "#contact",
+      link: "contact",
+      offset: "0",
+      mobile: "0",
     },
   ];
 
@@ -61,18 +69,29 @@ export function Header() {
           onClose={() => setIsMobileMenuOpen(false)}
         >
           {navItems.map((item, idx) => (
-            <a
+            // <a
+            //   key={`mobile-link-${idx}`}
+            //   href={item.link}
+            //   onClick={() => setIsMobileMenuOpen(false)}
+            //   className="relative text-neutral-600 dark:text-neutral-300"
+            // >
+            //   <span className="block">{item.name}</span>
+            // </a>
+            <Link
               key={`mobile-link-${idx}`}
-              href={item.link}
+              to={item.link}
               onClick={() => setIsMobileMenuOpen(false)}
               className="relative text-neutral-600 dark:text-neutral-300"
+              smooth={true}
+              duration={500}
+              offset={item.mobile ? parseInt(item.mobile, 10) : undefined}
             >
               <span className="block">{item.name}</span>
-            </a>
+            </Link>
           ))}
-            <span className="block dark:text-white">
-              <span>Theme:</span> <ThemeToggle />
-            </span>
+          <span className="block dark:text-white">
+            <span>Theme:</span> <ThemeToggle />
+          </span>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>

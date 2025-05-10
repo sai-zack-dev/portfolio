@@ -4,6 +4,7 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { cn } from "@/lib/utils";
+import { Element } from "react-scroll";
 
 export function Experience() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -127,64 +128,65 @@ export function Experience() {
           </div>
         ) : null}
       </AnimatePresence>
-      <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
-      <div
-        className={cn(
-          "absolute inset-0",
-          "[background-size:20px_20px]",
-          "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
-          "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]",
-        )}
-      />
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
-      <ul className="max-w-5xl mx-auto w-full gap-4 px-10 mb-20 z-30">
-        <h1 className="text-black dark:text-white text-2xl mb-10">
-          Experiences
-        </h1>
-        {cards.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={`card-${card.title}-${id}`}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
-          >
-            <div className="flex gap-4 flex-row ">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-14 w-14 rounded-lg object-cover object-top"
-                />
+      <Element name="experience" className="h-dvh">
+        <div className="relative flex h-[50rem] w-full items-center justify-center bg-white dark:bg-black">
+          <div
+            className={cn(
+              "absolute inset-0",
+              "[background-size:20px_20px]",
+              "[background-image:radial-gradient(#d4d4d4_1px,transparent_1px)]",
+              "dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"
+            )}
+          />
+          {/* Radial gradient for the container to give a faded look */}
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+          <ul className="max-w-5xl mx-auto w-full gap-4 px-5 sm:px-10 mb-20 z-30">
+            <h1 className="text-black dark:text-white text-2xl mb-10">
+              Experiences
+            </h1>
+            {cards.map((card, index) => (
+              <motion.div
+                layoutId={`card-${card.title}-${id}`}
+                key={`card-${card.title}-${id}`}
+                onClick={() => setActive(card)}
+                className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+              >
+                <div className="flex sm:gap-4 flex-row ">
+                  <motion.div layoutId={`image-${card.title}-${id}`}>
+                    <img
+                      width={100}
+                      height={100}
+                      src={card.src}
+                      alt={card.title}
+                      className="h-14 w-14 rounded-lg object-cover object-top hidden sm:block"
+                    />
+                  </motion.div>
+                  <div className="">
+                    <motion.h3
+                      layoutId={`title-${card.title}-${id}`}
+                      className="font-medium text-neutral-800 dark:text-neutral-200 text-left"
+                    >
+                      {card.title}
+                    </motion.h3>
+                    <motion.p
+                      layoutId={`description-${card.description}-${id}`}
+                      className="text-neutral-600 dark:text-neutral-400 text-left"
+                    >
+                      {card.description}
+                    </motion.p>
+                  </div>
+                </div>
+                <motion.button
+                  layoutId={`button-${card.title}-${id}`}
+                  className="px-4 py-2 text-xs sm:text-sm rounded-full font-bold sm:bg-gray-100 bg-[#93c2ea] hover:bg-[#93c2ea] text-black mt-4 md:mt-0"
+                >
+                  {card.ctaText}
+                </motion.button>
               </motion.div>
-              <div className="">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-left"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-left"
-                >
-                  {card.description}
-                </motion.p>
-              </div>
-            </div>
-            <motion.button
-              layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
-            >
-              {card.ctaText}
-            </motion.button>
-          </motion.div>
-        ))}
-      </ul>
-    </div>
-      
+            ))}
+          </ul>
+        </div>
+      </Element>
     </>
   );
 }
@@ -224,90 +226,58 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Freelance",
+    description: "before 2022",
     title: "Graphic Designer",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "View More",
+    ctaText: "Freelancing",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-          her melancholic and cinematic music style. Born Elizabeth Woolridge
-          Grant in New York City, she has captivated audiences worldwide with
-          her haunting voice and introspective lyrics. <br /> <br /> Her songs
-          often explore themes of tragic romance, glamour, and melancholia,
-          drawing inspiration from both contemporary and vintage pop culture.
-          With a career that has seen numerous critically acclaimed albums, Lana
-          Del Rey has established herself as a unique and influential figure in
-          the music industry, earning a dedicated fan base and numerous
-          accolades.
+          Created visual content for local businesses, including logos, marketing materials and brand assets.
         </p>
       );
     },
   },
   {
-    description: "Intern",
+    description: "3 months (early 2022)",
     title: "QA Tester",
     src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "View More",
+    ctaText: "Internship",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience. Born
-          in the village of Khant Maanpur in Punjab, India, he has become a
-          cultural icon in the Punjabi music industry. <br /> <br /> His songs
-          often reflect the struggles and triumphs of everyday life, capturing
-          the essence of Punjabi culture and traditions. With a career spanning
-          over two decades, Babu Maan has released numerous hit albums and
-          singles that have garnered him a massive fan following both in India
-          and abroad.
+          Tested and debugged C#.NET software, ensuring quality and reliability.
         </p>
       );
     },
   },
 
   {
-    description: "Intern",
-    title: "ERP Solution",
+    description: "3 months (late 2022)",
+    title: "ERP Solution ",
     src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "View More",
+    ctaText: "Internship",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience. Formed in Los Angeles, California, they have become a
-          cultural icon in the heavy metal music industry. <br /> <br /> Their
-          songs often reflect themes of aggression, social issues, and personal
-          struggles, capturing the essence of the heavy metal genre. With a
-          career spanning over four decades, Metallica has released numerous hit
-          albums and singles that have garnered them a massive fan following
-          both in the United States and abroad.
+          Conducted research and development on Odoo ERP solutions.
         </p>
       );
     },
   },
   {
-    description: "Full Time",
+    description: "1 year & 4 months (2022-2024)",
     title: "Full Stack Developer",
     src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "View More",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaText: "Full-time job",
+    ctaLink: "#",
     content: () => {
       return (
         <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. Formed in
-          London in 1968, they have become a cultural icon in the rock music
-          world. <br /> <br /> Their songs often reflect a blend of blues, hard
-          rock, and folk music, capturing the essence of the 1970s rock era.
-          With a career spanning over a decade, Led Zeppelin has released
-          numerous hit albums and singles that have garnered them a massive fan
-          following both in the United Kingdom and abroad.
+          Developed web apps with the LAMP stack, specializing in PHP and JavaScript for both front-end and back-end development, and mobile API integration.
         </p>
       );
     },
