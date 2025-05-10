@@ -94,10 +94,10 @@ const IntroductionContent = () => {
         <div className="w-full h-full sm:col-span-2 flex flex-col items-start justify-center gap-4">
           <h1 className="flex flex-col text-gray-900 dark:text-zinc-50 sm:flex-row text-2xl sm:text-3xl sm:gap-2 sm:items-center">
             <span className="align-middle">Hello, I'm</span>
-            <div className="font-semibold text-5xl align-middle">SAI ZACK</div>
+            <div className="font-semibold text-5xl align-middle text-sky-600 dark:text-sky-300">SAI ZACK</div>
           </h1>
           <FlipWordTitle />
-          <p className="text-gray-400 dark:text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+          <p className="text-gray-500 dark:text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto mb-10">
             build innovative{" "}
             <LinkPreview url="https://github.com/sai-zack-dev?tab=repositories">
               projects
@@ -110,7 +110,7 @@ const IntroductionContent = () => {
             <LinkPreview url="https://www.linkedin.com/in/sai-zay-linn-htet">
               experiences
             </LinkPreview>{" "}
-            in Laravel, React, React Native and Figma.
+            in Laravel, React and React Native.
           </p>
         </div>
       </div>

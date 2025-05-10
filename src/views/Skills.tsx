@@ -1,9 +1,12 @@
 "use client";
 
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { Box, Settings, Sparkles } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 import { Element } from "react-scroll";
+import {
+  IconTerminal2,
+} from "@tabler/icons-react";
 
 export function Skills() {
   return (
@@ -29,20 +32,20 @@ interface GridItemProps {
   area: string;
   icon: React.ReactNode;
   title: string;
-  description: React.ReactNode;
+  list: Array<string>;
 }
 
 const Grid = () => {
   return (
-    <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-8 px-4 py-16">
-      <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-2 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem]">
+    <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-8 px-4 py-16">
+      <ul className="w-full grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-2 md:grid-rows-2 lg:gap-4 xl:max-h-[34rem]">
         <GridItem
           area="md:[grid-area:1/1/3/2]"
           icon={
             <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
           }
           title="Tech Stack"
-          description="Laravel, PHP, React, React Native, JavaScript"
+          list={["Laravel", "PHP", "React", "React Native", "JavaScript", "TypeScript", "Tailwind CSS", "HTML", "CSS", "MySQL", "PostgreSQL", "Git", "REST API", "Apache", "Linux"]}
         />
 
         <GridItem
@@ -51,7 +54,7 @@ const Grid = () => {
             <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />
           }
           title="Design Tools"
-          description="Figma, Adobe Photoshop, Spline"
+          list={["Figma", "Adobe Photoshop", "Spline"]}
         />
 
         <GridItem
@@ -60,14 +63,14 @@ const Grid = () => {
             <Box className="h-full w-full text-black dark:text-neutral-400" />
           }
           title="Soft Skills"
-          description="Strong Collaboration & Teamwork, Time Management, Critical Thinking & Problem-Solving, Willingness to Learn new tech"
+          list={["Strong Collaboration & Teamwork", "Time Management", "Critical Thinking & Problem-Solving", "Willingness to Learn new tech"]}
         />
       </ul>
     </div>
   );
 };
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+const GridItem = ({ area, icon, title, list }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3 bg-gray-500/5 backdrop-blur-[2px]">
@@ -90,7 +93,14 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
                 {title}
               </h3>
               <h2 className="font-sans text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
-                {description}
+                <ul>
+                  {list.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <IconTerminal2 className="h-4 w-4 text-black dark:text-neutral-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </h2>
             </div>
           </div>
