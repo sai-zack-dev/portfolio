@@ -2,6 +2,10 @@
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
 import { FlipWords } from "../components/ui/flip-words";
 import { LinkPreview } from "@/components/ui/link-preview";
+import { Element } from "react-scroll";
+import { motion } from "motion/react";
+import { AuroraBackground } from "../components/ui/aurora-background";
+import profileImg from "../assets/profile.png";
 
 export function Introduction() {
   const images = [
@@ -38,56 +42,78 @@ export function Introduction() {
     "https://assets.aceternity.com/world-map.webp",
   ];
   return (
-    <div className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden">
-      <div className="relative z-20 w-full mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 px-4 gap-10 mt-10 sm:mt-0">
-        <div className="w-full max-w-[50vw] bg-white aspect-square rounded-full mx-auto"></div>
-        <div className="w-full h-full sm:col-span-2 flex flex-col items-start justify-around gap-4">
-          <h1 className="flex flex-col sm:flex-row text-2xl sm:text-3xl text-white sm:gap-2 text-shadow-lg sm:items-center">
-            <span className="align-middle">Hello, I'm</span>
-            <div className="font-bold text-[#FCC959] text-4xl align-middle">
-              SAI ZACK
-              <img
-                src="https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif"
-                alt="gif"
-                className="w-12 h-12 rounded-full inline-block ms-3"
-              />
-            </div>
-          </h1>
-          <FlipWordTitle />
-          <p className="text-gray-400 dark:text-zinc-400 text-lg sm:text-2xl max-w-3xl mx-auto mb-10">
-            build innovative{" "}
-            <LinkPreview url="https://framer.com/motion">
-              projects
-            </LinkPreview>{" "}
-            that showcase my{" "}
-            <LinkPreview url="https://framer.com/motion">
-              skills
-            </LinkPreview>{" "}
-            in both development and design, with hands-on{" "}
-            <LinkPreview url="https://framer.com/motion">
-              experiences
-            </LinkPreview>{" "}
-            in Laravel, React, React Native and Figma.
-          </p>
-        </div>
+    <Element name="introduction">
+      {/* Dark */}
+      <div className="relative h-dvh w-full flex-col items-center justify-center overflow-hidden hidden dark:flex">
+        <IntroductionContent />
+
+        <div className="absolute inset-0 z-10 h-full w-full bg-gray-950/75 backdrop-blur-[2px] dark:bg-zinc-900/50" />
+        <ThreeDMarquee
+          className="pointer-events-none absolute inset-0 h-full w-full"
+          images={images}
+        />
       </div>
-      {/* overlay */}
-      <div className="absolute inset-0 z-10 h-full w-full bg-gray-950/75 backdrop-blur-[2px] dark:bg-zinc-900/50" />
-      <ThreeDMarquee
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        images={images}
-      />
-    </div>
+      {/* Light */}
+      <div className="dark:hidden">
+        <AuroraBackground>
+          <IntroductionContent />
+        </AuroraBackground>
+      </div>
+    </Element>
   );
 }
 
 const FlipWordTitle = () => {
   const words = ["Designer", "Developer", "Engineer"];
   return (
-    <div className=" text-2xl sm:text-4xl font-semibold text-white text-shadow-lg">
+    <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-700 dark:text-zinc-200">
       &lt; Software
       <FlipWords words={words} />
       /&gt;
     </div>
+  );
+};
+
+const IntroductionContent = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0.0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        delay: 0.3,
+        duration: 0.8,
+        ease: "easeInOut",
+      }}
+      className="relative flex flex-col gap-4 items-center justify-center px-4 z-20"
+    >
+      <div className="relative z-20 w-full mx-auto max-w-5xl grid grid-cols-1 sm:grid-cols-3 px-4 gap-10">
+        <div className="relative w-full max-w-[50vw] bg-white aspect-square rounded-full mx-auto">
+          <div className="absolute bg-black/10 w-full h-full rounded-full hidden dark:block" />
+          <img src={profileImg} alt="Profile" />
+        </div>
+        <div className="w-full h-full sm:col-span-2 flex flex-col items-start justify-center gap-4">
+          <h1 className="flex flex-col text-gray-900 dark:text-zinc-50 sm:flex-row text-2xl sm:text-3xl sm:gap-2 sm:items-center">
+            <span className="align-middle">Hello, I'm</span>
+            <div className="font-semibold text-5xl align-middle">SAI ZACK</div>
+          </h1>
+          <FlipWordTitle />
+          <p className="text-gray-400 dark:text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+            build innovative{" "}
+            <LinkPreview url="https://github.com/sai-zack-dev?tab=repositories">
+              projects
+            </LinkPreview>{" "}
+            that showcase my{" "}
+            <LinkPreview url="https://github.com/sai-zack-dev">
+              skills
+            </LinkPreview>{" "}
+            in both development and design, with hands-on{" "}
+            <LinkPreview url="https://www.linkedin.com/in/sai-zay-linn-htet">
+              experiences
+            </LinkPreview>{" "}
+            in Laravel, React, React Native and Figma.
+          </p>
+        </div>
+      </div>
+    </motion.div>
   );
 };

@@ -178,7 +178,7 @@ export function Experience() {
                 </div>
                 <motion.button
                   layoutId={`button-${card.title}-${id}`}
-                  className="px-4 py-2 text-xs sm:text-sm rounded-full font-bold sm:bg-gray-100 bg-[#93c2ea] hover:bg-[#93c2ea] text-black mt-4 md:mt-0"
+                  className="px-4 py-2 text-xs sm:text-sm rounded-full font-bold sm:bg-gray-100 bg-[#93c2ea] text-black mt-4 md:mt-0"
                 >
                   {card.ctaText}
                 </motion.button>
@@ -229,7 +229,7 @@ const cards = [
     description: "before 2022",
     title: "Graphic Designer",
     src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Freelancing",
+    ctaText: "Freelance",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -272,7 +272,7 @@ const cards = [
     description: "1 year & 4 months (2022-2024)",
     title: "Full Stack Developer",
     src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "Full-time job",
+    ctaText: "Full Time",
     ctaLink: "#",
     content: () => {
       return (

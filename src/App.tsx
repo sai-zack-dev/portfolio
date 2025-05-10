@@ -1,11 +1,11 @@
-import { Contact } from './views/Contact';
-import { Experience } from './views/Experience';
-import { Header } from './views/Header'; 
-import { Introduction } from './views/Introduction';
-import { Projects } from './views/Projects'; 
-import { Skills } from './views/Skills';
+import { Contact } from "./views/Contact";
+import { Experience } from "./views/Experience";
+import { Header } from "./views/Header";
+import { Introduction } from "./views/Introduction";
+import { Projects } from "./views/Projects";
+import { Skills } from "./views/Skills";
 
-function App() { 
+function App() {
   return (
     <div className="bg-white dark:bg-black">
       <Header />
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
