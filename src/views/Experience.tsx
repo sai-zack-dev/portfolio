@@ -144,7 +144,7 @@ export function Experience() {
             <h1 className="text-black dark:text-white text-2xl mb-10">
               Experiences
             </h1>
-            {cards.map((card, index) => (
+            {cards.map((card) => (
               <motion.div
                 layoutId={`card-${card.title}-${id}`}
                 key={`card-${card.title}-${id}`}

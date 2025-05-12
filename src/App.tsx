@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { MultiStepLoader as Loader } from "./components/ui/multi-step-loader"; // adjust this import path
-import { IconSquareRoundedX } from "@tabler/icons-react";
-
 import { Contact } from "./views/Contact";
 import { Experience } from "./views/Experience";
 import { Header } from "./views/Header";
