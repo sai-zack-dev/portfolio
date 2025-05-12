@@ -2,7 +2,7 @@
 // import { useState } from "react";
 // import { Lens } from "./ui/lens";
 import { motion } from "motion/react";
-import { cn } from "@/lib/utils";
+// import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   thumbnail: string;
