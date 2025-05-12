@@ -8,7 +8,9 @@ import {
   IconBrandLinkedin,
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandCodepen
+  IconBrandCodepen,
+  IconDownload,
+  IconUser,
 } from "@tabler/icons-react";
 
 export function Contact() {
@@ -23,12 +25,14 @@ export function Contact() {
           </p>
           <div className="flex gap-5 justify-center">
             <Button variant="outline" className="rounded-full ">
+              <IconUser />
               ABOUT ME
             </Button>
             <Button
               variant="outline"
               className="bg-zinc-900 dark:bg-gray-100 text-gray-100 dark:text-zinc-800 rounded-full"
             >
+              <IconDownload />
               DOWNLOAD CV
             </Button>
           </div>
@@ -41,7 +45,7 @@ export function Contact() {
               <IconMapPinFilled className="text-black dark:text-white" /> <span className="text-sm">Singapore</span>
             </div>
           </div>
-          <div className="flex justify-center gap-5 text-gray-600 dark:text-zinc-300">
+          <div className="flex justify-center gap-5 text-gray-500 dark:text-zinc-300">
             <a href="#">
               <IconBrandGithub className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>

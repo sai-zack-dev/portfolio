@@ -103,7 +103,7 @@ const IntroductionContent = () => {
               projects
             </LinkPreview>{" "}
             that showcase my{" "}
-            <LinkPreview url="https://github.com/sai-zack-dev">
+            <LinkPreview url="https://codepen.io/saizack/pens/showcase">
               skills
             </LinkPreview>{" "}
             in both development and design, with hands-on{" "}
