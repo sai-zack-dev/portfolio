@@ -97,7 +97,7 @@ const IntroductionContent = () => {
             <div className="font-semibold text-5xl align-middle text-sky-600 dark:text-sky-300">SAI ZACK</div>
           </h1>
           <FlipWordTitle />
-          <p className="text-gray-500 dark:text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto mb-10">
+          <div className="text-gray-500 dark:text-zinc-400 text-lg sm:text-xl max-w-3xl mx-auto mb-10">
             build innovative{" "}
             <LinkPreview url="https://github.com/sai-zack-dev?tab=repositories">
               projects
@@ -111,7 +111,7 @@ const IntroductionContent = () => {
               experiences
             </LinkPreview>{" "}
             in Laravel, React and React Native.
-          </p>
+          </div>
         </div>
       </div>
     </motion.div>

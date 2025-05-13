@@ -46,19 +46,19 @@ export function Contact() {
             </div>
           </div>
           <div className="flex justify-center gap-5 text-gray-500 dark:text-zinc-300">
-            <a href="#">
+            <a href="https://github.com/sai-zack-dev" target="_blank">
               <IconBrandGithub className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
             <a href="#">
               <IconBrandFacebook className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
-            <a href="#">
+            <a href="https://www.linkedin.com/in/sai-zay-linn-htet/" target="_blank">
               <IconBrandLinkedin className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
             <a href="#">
               <IconBrandInstagram className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
-            <a href="#">
+            <a href="https://codepen.io/saizack/" target="_blank">
               <IconBrandCodepen className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
           </div>

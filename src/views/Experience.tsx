@@ -153,13 +153,13 @@ export function Experience() {
               >
                 <div className="flex sm:gap-4 flex-row ">
                   <motion.div layoutId={`image-${card.title}-${id}`}>
-                    <img
+                    {/* <img
                       width={100}
                       height={100}
                       src={card.src}
                       alt={card.title}
                       className="h-14 w-14 rounded-lg object-cover object-top hidden sm:block"
-                    />
+                    /> */}
                   </motion.div>
                   <div className="">
                     <motion.h3
@@ -228,13 +228,13 @@ const cards = [
   {
     description: "before 2022",
     title: "Graphic Designer",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/assets/experiences/graphic_design.png",
     ctaText: "Freelance",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Created visual content for local businesses, including logos, marketing materials and brand assets.
+          Collaborated with local businesses to create compelling visual content tailored to their branding needs. Designed logos, business cards, promotional flyers, and digital assets that helped clients establish and strengthen their brand identity. Gained hands-on experience in balancing creativity with client requirements and branding consistency.
         </p>
       );
     },
@@ -242,13 +242,13 @@ const cards = [
   {
     description: "3 months (early 2022)",
     title: "QA Tester",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    src: "/assets/experiences/qa_testing.jpg",
     ctaText: "Internship",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Tested and debugged C#.NET software, ensuring quality and reliability.
+          Worked as a QA Tester intern on C# and ASP.NET-based applications. Responsibilities included identifying bugs, testing new features, and verifying software functionality across different environments. Contributed to maintaining product quality and stability by preparing detailed reports and assisting developers in resolving issues.
         </p>
       );
     },
@@ -257,13 +257,13 @@ const cards = [
   {
     description: "3 months (late 2022)",
     title: "ERP Solution ",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
+    src: "assets/experiences/odoo_erp.jpg",
     ctaText: "Internship",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
-          Conducted research and development on Odoo ERP solutions.
+          Participated in the research and development of ERP systems using Odoo. Explored the customization capabilities of Odoo modules to meet real business requirements. Gained practical experience in enterprise workflows, business logic, and the modular architecture of ERP platforms.
         </p>
       );
     },
@@ -271,13 +271,13 @@ const cards = [
   {
     description: "1 year & 4 months (2022-2024)",
     title: "Full Stack Developer",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "assets/experiences/dev.png",
     ctaText: "Full Time",
     ctaLink: "#",
     content: () => {
       return (
         <p>
-          Developed web apps with the LAMP stack, specializing in PHP and JavaScript for both front-end and back-end development, and mobile API integration.
+          Worked as a full-stack developer, building responsive and dynamic web applications using the LAMP stack (Linux, Apache, MySQL, PHP). Specialized in PHP and JavaScript for both front-end and back-end development. Integrated RESTful APIs for mobile applications and optimized performance and scalability. Also contributed to database design, authentication systems, and maintaining clean, reusable code for long-term projects.
         </p>
       );
     },
