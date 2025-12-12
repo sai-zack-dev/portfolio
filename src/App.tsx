@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { MultiStepLoader as Loader } from "./components/ui/multi-step-loader"; // adjust this import path
+// import { useEffect, useState } from "react";
+// import { MultiStepLoader as Loader } from "./components/ui/multi-step-loader"; // adjust this import path
 import { Contact } from "./views/Contact";
 import { Experience } from "./views/Experience";
 import { Header } from "./views/Header";
@@ -8,17 +8,17 @@ import { Projects } from "./views/Projects";
 import { Skills } from "./views/Skills";
 
 // Define your loading steps
-const loadingStates = [
-  { text: "Waking up the backend..." },
-  { text: "Fetching skills..." },
-  { text: "Loading projects..." },
-  { text: "Contacting aliens..." },
-  { text: "Rendering experience..." },
-  { text: "Done!" },
-];
+// const loadingStates = [
+//   { text: "Waking up the backend..." },
+//   { text: "Fetching skills..." },
+//   { text: "Loading projects..." },
+//   { text: "Contacting aliens..." },
+//   { text: "Rendering experience..." },
+//   { text: "Done!" },
+// ];
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
   //   // Replace this with your real data fetching logic
