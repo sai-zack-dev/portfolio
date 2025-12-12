@@ -44,8 +44,8 @@ const Grid = () => {
           icon={
             <Settings className="h-4 w-4 text-black dark:text-neutral-400" />
           }
-          title="Tech Stack"
-          list={["Laravel", "PHP", "React", "React Native", "JavaScript", "TypeScript", "Tailwind CSS", "HTML", "CSS", "MySQL", "PostgreSQL", "Git", "REST API", "Apache", "Linux"]}
+          title="Frameworks"
+          list={["Laravel", "Nest JS", "React", "Tailwind", "Next JS", "React Native", "Flutter", "Electron"]}
         />
 
         <GridItem
@@ -53,8 +53,8 @@ const Grid = () => {
           icon={
             <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />
           }
-          title="Design Tools"
-          list={["Figma", "Adobe Photoshop", "Spline"]}
+          title="Languages"
+          list={["PHP", "JavaScript", "TypeScript", "Python", "SQL"]}
         />
 
         <GridItem
@@ -62,8 +62,8 @@ const Grid = () => {
           icon={
             <Box className="h-full w-full text-black dark:text-neutral-400" />
           }
-          title="Soft Skills"
-          list={["Strong Collaboration & Teamwork", "Time Management", "Critical Thinking & Problem-Solving", "Willingness to Learn new tech"]}
+          title="Tools"
+          list={["Git", "Linux", "Docker", "Figma", "Photoshop"]}
         />
       </ul>
     </div>

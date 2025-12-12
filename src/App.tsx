@@ -20,29 +20,29 @@ const loadingStates = [
 function App() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Replace this with your real data fetching logic
-    const fetchData = async () => {
-      try {
-        // Example of loading from APIs
-        // await Promise.all([fetchSkills(), fetchProjects(), fetchUser()]);
-        await new Promise((resolve) => setTimeout(resolve, 6000)); // Simulated loading
-      } catch (error) {
-        console.error("Failed to load data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   // Replace this with your real data fetching logic
+  //   const fetchData = async () => {
+  //     try {
+  //       // Example of loading from APIs
+  //       // await Promise.all([fetchSkills(), fetchProjects(), fetchUser()]);
+  //       await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated loading
+  //     } catch (error) {
+  //       console.error("Failed to load data:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div  className="bg-white dark:bg-black w-full h-full min-h-dvh">
       {/* Loader shown while data is loading */}
-      <Loader loadingStates={loadingStates} loading={loading} duration={1000} />
+      {/* <Loader loadingStates={loadingStates} loading={loading} duration={600} /> */}
 
-      {!loading && (
+      {/* {!loading && ( */}
         <div>
           <Header />
           <Introduction />
@@ -51,7 +51,7 @@ function App() {
           <Experience />
           <Contact />
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

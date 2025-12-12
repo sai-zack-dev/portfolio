@@ -6,8 +6,8 @@ import {
   IconMapPinFilled,
   IconBrandGithub,
   IconBrandLinkedin,
-  IconBrandFacebook,
-  IconBrandInstagram,
+  // IconBrandFacebook,
+  // IconBrandInstagram,
   IconBrandCodepen,
   IconDownload,
   IconUser,
@@ -24,13 +24,21 @@ export function Contact() {
             professional background
           </p>
           <div className="flex gap-5 justify-center">
-            <Button variant="outline" className="rounded-full ">
+            <Button
+              variant="outline"
+              className="rounded-full"
+              onClick={() =>
+                window.open("https://www.canva.com/design/DAGwf_7k-WM/HDjBzIh8xrJLUc-aVChkDA/view?utm_content=DAGwf_7k-WM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h034621bb9f", "_blank")
+              }
+            >
               <IconUser />
               ABOUT ME
             </Button>
+
             <Button
               variant="outline"
               className="bg-zinc-900 dark:bg-gray-100 text-gray-100 dark:text-zinc-800 rounded-full"
+              onClick={() => window.open("/assets/resume/v4.2.pdf", "_blank")}
             >
               <IconDownload />
               DOWNLOAD CV
@@ -39,25 +47,31 @@ export function Contact() {
           <div className="flex flex-row gap-4 justify-center">
             <div className="flex flex-row gap-2 items-center">
               <IconMailFilled className="text-black dark:text-white" />
-              <a href="mailto:" className="text-sm hover:underline">saizlinh@gmail.com</a>
+              <a href="mailto:" className="text-sm hover:underline">
+                saizlinh@gmail.com
+              </a>
             </div>
             <div className="flex flex-row gap-2 items-center">
-              <IconMapPinFilled className="text-black dark:text-white" /> <span className="text-sm">Singapore</span>
+              <IconMapPinFilled className="text-black dark:text-white" />{" "}
+              <span className="text-sm">Singapore</span>
             </div>
           </div>
           <div className="flex justify-center gap-5 text-gray-500 dark:text-zinc-300">
             <a href="https://github.com/sai-zack-dev" target="_blank">
               <IconBrandGithub className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <IconBrandFacebook className="w-10 h-10 hover:text-black hover:dark:text-white" />
-            </a>
-            <a href="https://www.linkedin.com/in/sai-zay-linn-htet/" target="_blank">
+            </a> */}
+            <a
+              href="https://www.linkedin.com/in/sai-zay-linn-htet/"
+              target="_blank"
+            >
               <IconBrandLinkedin className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <IconBrandInstagram className="w-10 h-10 hover:text-black hover:dark:text-white" />
-            </a>
+            </a> */}
             <a href="https://codepen.io/saizack/" target="_blank">
               <IconBrandCodepen className="w-10 h-10 hover:text-black hover:dark:text-white" />
             </a>
